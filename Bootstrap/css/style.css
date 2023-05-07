@@ -1,0 +1,23 @@
+body {
+    overflow-x: hidden;
+}
+.for-icon{
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 80px 40px;
+    margin-top: 3cm;
+}
+.input-box {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 3;
+    border-color: #03256c;
+    border-style: solid;
+}
+::placeholder {
+    color: #03256c;
+}
+textarea {
+    border: 2px;
+}
