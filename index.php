@@ -47,7 +47,37 @@
       <P class="fs-2 mx-5">PLASTIC FOOTPRINT</P>
     </div>
     <div class="row mt-5 mx-5 d-flex justify-content-around">
-      <div class="col-sm-3">
+      <?php 
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $database = "ocean_one";
+
+      // Create connection
+      $conn = mysqli_connect($servername, $username, $password, $database);
+
+      // Check connection
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      $query = "SELECT * FROM sec2";
+      $result = mysqli_query($conn, $query);
+
+      foreach ($result as $row) {
+        echo "
+        <div class='col-sm-3'>
+          <div class='card border-0' style='background-color: #03256c; color: #ffffff;'>
+            <div class='card-body'>
+              <p class='fs-4>" . $row['title'] . "</p>
+              <p id='align-content'>" . $row['text'] . "</p>
+              <button type='button' class='btn px-4' style='background-color: #1768ac; color: #ffffff;'>". $row['button'] . "</button>
+            </div>
+          </div>
+        </div>";
+      }
+      ?>
+      <!-- <div class="col-sm-3">
         <div class="card border-0" style="background-color: #03256c; color: #ffffff;">
           <div class="card-body">
             <p class="fs-4">ALIGN</p>
@@ -78,7 +108,7 @@
             <button type="button" class="btn px-5" style="background-color: #1768ac; color: #ffffff;">SEE HOW</button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- Section 3 -->
